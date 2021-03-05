@@ -1,3 +1,5 @@
+[![Python application test with Github Actions](https://github.com/TimoKerr/Flask_app/actions/workflows/main.yml/badge.svg)](https://github.com/TimoKerr/Flask_app/actions/workflows/main.yml)
+
 # Flask_app
 Simple ML flask app to serve as template
 
