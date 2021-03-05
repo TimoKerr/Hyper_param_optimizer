@@ -4,5 +4,5 @@ numpy
 pandas
 sklearn
 pytest
+pytest-cov
 ipython
-scipy

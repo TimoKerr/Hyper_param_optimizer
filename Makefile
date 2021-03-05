@@ -8,3 +8,6 @@ install:
 
 lint:
 	pylint --disable=R,C app.py iris.py mylib/*.py
+
+test: 
+	python -m pytest -vv --cov=mylib app.py app_test.py
