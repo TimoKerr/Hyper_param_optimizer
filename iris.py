@@ -1,3 +1,2 @@
-import pandas as pd
-import numpy as np
-import pickle
+# see jupyter notebook
+print("See model.ipynb for model creation.")
