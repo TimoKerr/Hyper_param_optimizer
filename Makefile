@@ -11,3 +11,6 @@ lint:
 
 test: 
 	python -m pytest -vv --cov=mylib --cov=app_test app_test.py
+
+format:
+	black *.py mylib/*.py
