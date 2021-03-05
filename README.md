@@ -2,6 +2,7 @@
 Simple ML flask app to serve as template
 
 ## Dir structure
+```
 .
 ├── app.py
 ├── data
@@ -16,8 +17,7 @@ Simple ML flask app to serve as template
 └── templates
     ├── after.html
     └── home.html
-    
+```
     
 ## Functions
-Makes very simple linear regression model form fixed data.
-Saves model as pkl
+Makes very simple linear regression model form fixed data, saves model as pkl, runs flask app in local.
