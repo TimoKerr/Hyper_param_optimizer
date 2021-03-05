@@ -1,0 +1,8 @@
+pylint
+flask
+numpy 
+pickle
+pandas
+sklearn
+pytest
+ipython
