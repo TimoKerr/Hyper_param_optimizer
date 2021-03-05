@@ -1,8 +1,14 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
+from sklearn.svm import SVC
+import warnings
 
-model = pickle.load(open('iri.pkl','rb'))
+with warnings.catch_warnings():
+      warnings.simplefilter("ignore", category=UserWarning)
+      model = pickle.load(open('iri.pkl','rb'))
+
+
 
 app = Flask(__name__)
 
