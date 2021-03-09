@@ -1,4 +1,7 @@
 scikit-optimize
+ipykernel
+hyperopt
+optuna
 pylint
 flask
 numpy 
