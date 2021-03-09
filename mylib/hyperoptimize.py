@@ -1,5 +1,4 @@
 """ Different hyperparameter optimisation methods"""
-import pandas as pd
 import numpy as np
 
 # General
@@ -180,9 +179,8 @@ def HyperOptSearch(train_x, train_y):
 
 def OptunaSearch(train_x, train_y):
 
-    trials = Trials()
-
     def optimize(trial, x, y):
+        trials = Trials()
         criterion = trial.suggest_categorical("criterion",["gini","entropy"])
         n_estimators = trial.suggest_int("n_estimators", 100, 1500)
         max_depth = trial.suggest_int("max_depth", 3, 15)
@@ -215,3 +213,5 @@ def OptunaSearch(train_x, train_y):
     optimization_function = partial(optimize, x=train_x, y=train_y)
     study = optuna.create_study(direction="minimize")
     study.optimize(optimization_function, n_trials=15)
+
+    return study
