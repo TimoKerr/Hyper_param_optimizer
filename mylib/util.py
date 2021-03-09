@@ -1,6 +1,7 @@
 """Simle util function as test"""
+import pandas as pd
 
+def read_data(file_path):
+    df = pd.read_csv(file_path)
+    return df
 
-def training_complete():
-    success = "Training is successful!"
-    return success
