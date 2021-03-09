@@ -1,26 +1,30 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
-
-model = pickle.load(open("iri.pkl", "rb"))
-app = Flask(__name__)
-
-
-@app.route("/")
-def man():
-    return render_template("home.html")
-
-
-@app.route("/predict", methods=["POST"])
-def home():
-    data1 = request.form["a"]
-    data2 = request.form["b"]
-    data3 = request.form["c"]
-    data4 = request.form["d"]
-    arr = np.array([[data1, data2, data3, data4]])
-    pred = model.predict(arr)
-    return render_template("after.html", data=pred)
+from mylib import util
+from mylib import hyperoptimize
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    df = util.read_data("/home/timoose/MLprojects/Hyper_param_optimizer/data/train.csv")
+    
+    train_x = df.drop("price_range", axis=1).values
+    train_y = df.price_range.values 
+
+    GridSearchModel = hyperoptimize.GridSearch()
+    GridSearchModel.fit(train_x, train_y)
+    print(GridSearchModel.best_score_)
+    print(GridSearchModel.best_estimator_.get_params())
+
+    RandomSearchModel = hyperoptimize.RandomSearch()
+    RandomSearchModel.fit(train_x, train_y)
+    print(RandomSearchModel.best_score_)
+    print(RandomSearchModel.best_estimator_.get_params())   
+
+    SkoptSearchResult = hyperoptimize.SkoptSearch(train_x, train_y)
+    print(SkoptSearchResult)
+
+    HyperoptSearchResult = hyperoptimize.HyperOptSearch(train_x, train_y)
+    print(HyperoptSearchResult)
+
+    OptunaSearchResult = hyperoptimize.OptunaSearch(train_x, train_y)
