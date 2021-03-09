@@ -180,7 +180,7 @@ def HyperOptSearch(train_x, train_y):
 def OptunaSearch(train_x, train_y):
 
     def optimize(trial, x, y):
-        trials = Trials()
+        #trials = Trials()
         criterion = trial.suggest_categorical("criterion",["gini","entropy"])
         n_estimators = trial.suggest_int("n_estimators", 100, 1500)
         max_depth = trial.suggest_int("max_depth", 3, 15)
