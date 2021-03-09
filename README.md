@@ -1,4 +1,4 @@
-[![Python application test with Github Actions](https://github.com/TimoKerr/Flask_app/actions/workflows/main.yml/badge.svg)](https://github.com/TimoKerr/Flask_app/actions/workflows/main.yml)
+[![Python application test with Github Actions](https://github.com/TimoKerr/Hyper_param_optimizer/actions/workflows/main.yml/badge.svg)](https://github.com/TimoKerr/Hyper_param_optimizer/actions/workflows/main.yml)
 
 # Hyper Parameter Optimization with different methods
 In this repository I test different methods for hyperparameter optimization. As a test case, I try to optimize the parameters of the SKlearn RandomForest classifier. Hyperparams to optimize: 
