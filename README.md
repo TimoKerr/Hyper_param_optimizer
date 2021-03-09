@@ -25,17 +25,16 @@ The methods themselves are defined as functions in ./mylib/hypteroptimize.py
 ├── app.py
 ├── app_test.py
 ├── data
-│   └── iris_csv.csv
-├── iri.pkl
-├── iris.py
+│   ├── test.csv
+│   └── train.csv
 ├── Makefile
 ├── model.ipynb
 ├── mylib
+│   ├── hyperoptimize.py
 │   ├── __init__.py
 │   └── util.py
 ├── README.md
 ├── requirements.txt
-├── static
 └── templates
     ├── after.html
     └── home.html
